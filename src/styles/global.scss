@@ -1,0 +1,79 @@
+/* ====================== Шрифты ====================== */
+/* Подключение Roboto через Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;600;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Roboto', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+/* Основные заголовки — более жирные */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto', 'Segoe UI', sans-serif;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+}
+
+/* Формы и интерактивные элементы */
+button,
+input,
+select,
+textarea {
+  font-family: 'Roboto', 'Segoe UI', sans-serif;
+}
+
+/* Контейнер */
+.container {
+  max-width: 1000px;       
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Адаптив для контейнера */
+@media (max-width: 1024px) {
+  .container {
+    max-width: 100%;
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 12px;
+  }
+}
+
+/* ====================== Дополнительные полезные глобальные стили ====================== */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Сброс отступов у списков */
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Для лучшей доступности */
+button {
+  cursor: pointer;
+}
+
+*:focus-visible {
+  outline: 2px solid #16A6AF;
+  outline-offset: 2px;
+}

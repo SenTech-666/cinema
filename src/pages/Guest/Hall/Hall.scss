@@ -1,0 +1,180 @@
+.hall-page {
+  min-height: 100vh;
+  position: relative;
+}
+
+.hall-page__background {
+  position: absolute;
+  inset: 0;
+  background-image: url('../../../assets/img/desktop.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: -1;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.75));
+    z-index: 1;
+  }
+}
+
+.hall-page__content {
+  position: relative;
+  z-index: 2;
+  max-width: 1164px;
+  margin: 0 auto;
+  padding: 40px 20px 100px;
+}
+
+.hall-page__header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo-big {
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+
+  &__v {
+    color: #f5c518;
+    font-size: 3.7rem;
+  }
+}
+
+.hall-page__info {
+  text-align: center;
+  margin-bottom: 50px;
+  color: white;
+}
+
+.hall-page__title {
+  font-size: 2.1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.hall-page__details {
+  font-size: 1.25rem;
+  opacity: 0.95;
+}
+
+.hall-scheme-wrapper {
+  margin-bottom: 60px;
+}
+
+/* ==================== Стили для мест в зале ==================== */
+.seat {
+  width: 46px;
+  height: 46px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+
+  /* Свободные обычные */
+  &.standart {
+    background: #393939;
+    color: #fff;
+  }
+
+  /* VIP */
+  &.vip {
+    background: #f9953a;
+    color: white;
+  }
+
+  /* ЗАНЯТЫЕ — красные */
+  &.taken {
+    background: #c62828 !important;
+    color: #fff;
+    cursor: not-allowed;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.7);
+    transform: none;
+  }
+
+  /* Заблокированные */
+  &.disabled {
+    background: #555555;
+    color: #999;
+    cursor: not-allowed;
+  }
+
+  /* Выбранные пользователем */
+  &.selected {
+    background: #00bfff;
+    color: white;
+    box-shadow: 0 0 15px rgba(0, 191, 255, 0.8);
+    transform: scale(1.08);
+  }
+
+  &:hover:not(.taken):not(.disabled) {
+    transform: scale(1.15);
+  }
+}
+
+/* ==================== Кнопка бронирования ==================== */
+.hall-page__actions {
+  text-align: center;
+}
+
+.selected-info {
+  color: white;
+  font-size: 1.25rem;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.btn-book {
+  background: #00bfff;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 700;
+  padding: 18px 90px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 6px 20px rgba(0, 191, 255, 0.3);
+
+  &:hover:not(:disabled) {
+    background: #00d0ff;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 191, 255, 0.4);
+  }
+
+  &:disabled {
+    background: #555555;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .hall-page__title {
+    font-size: 1.8rem;
+  }
+
+  .seat {
+    width: 38px;
+    height: 38px;
+    font-size: 0.85rem;
+  }
+
+  .legend {
+    gap: 20px;
+    font-size: 0.95rem;
+  }
+}
