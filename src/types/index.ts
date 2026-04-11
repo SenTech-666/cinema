@@ -4,7 +4,7 @@ export interface Seat {
   row: number;
   number: number;
   type: 'standard' | 'vip';
-  status: 'free' | 'occupied' | 'blocked';   // ← добавили blocked
+  status: 'free' | 'occupied' | 'blocked';   
 }
 
 export interface BookingData {

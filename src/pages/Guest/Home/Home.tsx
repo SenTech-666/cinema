@@ -141,7 +141,6 @@ const Home = () => {
                 seancesByHall[seance.seance_hallid].push(seance);
               });
 
-              // Если у фильма нет сеансов в активных залах — не показываем карточку
               if (Object.keys(seancesByHall).length === 0) {
                 return null;
               }

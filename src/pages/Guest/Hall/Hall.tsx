@@ -64,7 +64,7 @@ const Hall = () => {
         movieTitle: movie.film_name,
         time: seance.seance_time,
         hall: hall.hall_name || `Зал ${hall.id}`,
-        hallName: hall.hall_name,           // важно для Ticket
+        hallName: hall.hall_name,           
         date: new Date().toLocaleDateString('ru-RU', { 
           weekday: 'long', 
           day: 'numeric', 

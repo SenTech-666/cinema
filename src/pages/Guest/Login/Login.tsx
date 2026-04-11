@@ -6,8 +6,8 @@ import './Login.scss';
 
 const Login = () => {
   const navigate = useNavigate();
-  const [login, setLogin] = useState('shfe-diplom@netology.ru'); // предзаполняем правильный логин
-  const [password, setPassword] = useState('shfe-diplom');       // предзаполняем правильный пароль
+  const [login, setLogin] = useState('shfe-diplom@netology.ru'); 
+  const [password, setPassword] = useState('shfe-diplom');       
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 

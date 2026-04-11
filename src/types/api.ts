@@ -1,10 +1,10 @@
 // src/types/api.ts — актуальные типы под реальный API Нетологии
 export interface Hall {
   id: number;
-  hall_name: string;           // ← правильное поле
+  hall_name: string;           
   hall_rows: number;
   hall_places: number;
-  hall_config: string[][];     // двумерный массив конфигурации мест
+  hall_config: string[][];     
   hall_price_standart: number;
   hall_price_vip: number;
   hall_open: 0 | 1;            // 0 = закрыт, 1 = открыт

@@ -45,7 +45,7 @@ const Payment = () => {
       const ticketsArray = selectedSeats.map(seat => ({
         row: seat.row,
         place: seat.number,
-        coast: seat.type === 'vip' ? 350 : 250, // или брать из bookingData, если хранишь
+        coast: seat.type === 'vip' ? 350 : 250, 
       }));
 
       formData.append('tickets', JSON.stringify(ticketsArray));
@@ -58,11 +58,11 @@ const Payment = () => {
       const data = await response.json();
 
       if (data.success && data.result) {
-        // Переходим на страницу с QR-кодом и передаём реальные данные билетов
+        
         navigate('/ticket', {
           state: {
             ...bookingData,
-            tickets: data.result.tickets, // данные с сервера
+            tickets: data.result.tickets, 
           }
         });
       } else {

@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import { useApi } from '../../context/ApiContext';
-import api from '../../api/Api';
+import { useApi } from '../../../context/ApiContext';
+import api from '../../../api/Api';
 import './AdminMovies.scss';
 
 const AdminMovies = () => {
-  const { movies, refreshData } = useApi();
+  const { films, refreshData } = useApi();
 
   const [filmName, setFilmName] = useState('');
   const [filmDuration, setFilmDuration] = useState('');
@@ -36,7 +36,7 @@ const AdminMovies = () => {
       formData.append('filmOrigin', filmOrigin);
       formData.append('filePoster', posterFile);
 
-      await api.addMovie(formData);   // пока метод не существует — будет ошибка
+      await api.addMovie(formData);   // 
 
       alert('✅ Фильм успешно добавлен!');
       setFilmName('');
@@ -117,20 +117,20 @@ const AdminMovies = () => {
       </div>
 
       <div className="movies-list">
-        <h3>Существующие фильмы ({movies.length})</h3>
+        <h3>Существующие фильмы ({films.length})</h3>
         <div className="movies-grid">
-          {movies.map((movie) => (
-            <div key={movie.id} className="movie-card">
+          {films.map((films) => (
+            <div key={films.id} className="movie-card">
               <div className="movie-poster">
-                {movie.film_poster ? (
-                  <img src={movie.film_poster} alt={movie.film_name} />
+                {films.film_poster ? (
+                  <img src={films.film_poster} alt={films.film_name} />
                 ) : (
                   <div className="no-poster">Нет постера</div>
                 )}
               </div>
               <div className="movie-info">
-                <h4>{movie.film_name}</h4>
-                <p>{movie.film_duration} мин • {movie.film_origin}</p>
+                <h4>{films.film_name}</h4>
+                <p>{films.film_duration} мин • {films.film_origin}</p>
               </div>
             </div>
           ))}
