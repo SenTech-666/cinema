@@ -189,7 +189,7 @@ const AdminHalls = () => {
     e.dataTransfer.effectAllowed = 'move';
   };
 
-  const handleDrop = (hallId: number, e: React.DragEvent<HTMLDivElement>) => {
+  const handleDrop = (_hallId: number, e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
     if (draggedMovieId !== null) {
       setShowAddSeanceModal(true);

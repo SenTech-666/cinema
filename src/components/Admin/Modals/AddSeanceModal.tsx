@@ -47,8 +47,7 @@ const AddSeanceModal = ({ isOpen, onClose, onSuccess }: AddSeanceModalProps) => 
     }
   };
 
-  const selectedHall = halls.find(h => h.id === selectedHallId);
-  const selectedMovie = films.find(f => f.id === selectedMovieId);
+  
 
   return (
     <div className="modal-overlay">

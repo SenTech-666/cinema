@@ -32,7 +32,7 @@ const Home = () => {
     return result;
   }, []);
 
-  const selectedDate = dates[selectedDateIndex];
+ 
 
   // Фильтруем только активные залы (hall_open === 1)
   const activeHalls = useMemo(() => {

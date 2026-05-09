@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+
 import './Header.scss';
 
 interface HeaderProps {
