@@ -3,7 +3,7 @@ import Router from './router/Router';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/cinema">   
       <Router />
     </BrowserRouter>
   );
