@@ -32,32 +32,35 @@
   font-size: 3.2rem;
   font-weight: 700;
   color: #ffffff;
-  text-align: center;
   margin-bottom: 40px;
   text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
 
-  &__v {
-    color: #f5c518;
-    font-size: 3.7rem;
-  }
+
 }
 
 .payment-card {
-  background: #ffffff;
-  border: 1px solid #e0e0e0;
+  max-width: 990px;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
-  max-width: 620px;
   margin: 0 auto;
-  padding: 40px 35px;
-  border-radius: 8px;
+  
+  border-radius: 2px;
+overflow: hidden;
+  position: relative;
 }
 
+
 .payment-card__header {
+  background: #F1EBE6F2;
   font-size: 1.35rem;
   font-weight: 600;
-  color: #2c2c2c;
-  margin-bottom: 20px;
-  text-align: center;
+  color: #C76F00;
+  margin-bottom: 6px;
+  padding: 40px 35px;
+  
+}
+.payment-card__body{
+background: #F1EBE6F2;
+padding: 40px 35px;
 }
 
 .payment-card__title {
@@ -67,6 +70,7 @@
   margin-bottom: 25px;
   text-align: center;
 }
+
 
 .payment-info p {
   margin-bottom: 10px;
@@ -93,4 +97,40 @@
   font-size: 0.95rem;
   text-align: center;
   line-height: 1.5;
+}
+
+
+.ticket-preview {
+  width: 1016px;
+  padding: 0 15px;
+  position: absolute;
+}
+
+.ticket-bg {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  margin: -3px 55px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.ticket-bg-up {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  margin: 118px 53px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  
+}
+
+.ticket-bg-down {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  margin: -124px 53.5px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transform: rotate(180deg);
 }

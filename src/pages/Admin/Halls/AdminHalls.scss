@@ -1,3 +1,5 @@
+
+
 .admin-layout {
   background-image: url('../../../assets/img/index-desktop.jpg');
   background-size: cover;
@@ -9,6 +11,23 @@
   max-width: 1100px;
   margin: 0 auto;
 }
+  .admin-header {
+    font-size: 2.19rem;
+    font-weight: 900;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 35px 0 0 104px;
+  }
+  .admin-header span{
+    font-weight: 200;
+  }
+  .admin-header p{
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 5px;
+    line-height: 12px;
+    padding-bottom: 34px;
+  }
 
 /* Новый/обновлённый блок для .admin-main */
 .admin-main {
@@ -203,11 +222,11 @@
 
 .seat {
   aspect-ratio: 1 / 1;
-  flex-basis: 46px;
+  flex-basis: 20px;
   flex-shrink: 0;
-  width: 46px;
+  width: 20px;
   height: auto;
-  border: none;
+  
   border-radius: 8px;
   font-size: 0.95rem;
   font-weight: 600;
@@ -849,7 +868,6 @@
   }
 
   .seat {
-    flex-basis: clamp(21px, 3.7vw, 30px);
     width: clamp(21px, 3.7vw, 30px);
     font-size: 0.75rem;
   }

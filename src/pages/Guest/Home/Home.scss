@@ -5,6 +5,7 @@
   background-position: center;
   background-attachment: fixed;
   position: relative;
+  
 
   /* ====================== HEADER ====================== */
   &__header {
@@ -17,6 +18,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 14px;
   }
 
   .logo {
@@ -30,6 +32,13 @@
     font-weight: 200;
 
   }
+  .btn-primary {
+        background-color: #16A6AF;
+        --bs-btn-bg: #16A6AF;
+        --bs-btn-border-color: #16A6AF;
+        border-radius: 2px;
+  }
+
 
   /* ====================== БЛОК ДАТ ====================== */
   .date-picker {

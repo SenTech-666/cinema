@@ -1,3 +1,26 @@
+ .header {
+    padding: 20px 0;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hall-page__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px;
+  }
+
+  .logo {
+    font-size: 2.19rem;
+    font-weight: 900;
+    color: #FFFFFF;
+    margin: 0;
+  }
+  .logo span{
+    font-weight: 200;
+  }
+
 .hall-page {
   min-height: 100vh;
   position: relative;
@@ -26,7 +49,7 @@
   z-index: 2;
   max-width: 1164px;
   margin: 0 auto;
-  padding: 40px 20px 100px;
+  background: #F1EBE6F2;
 }
 
 .hall-page__header {
@@ -40,16 +63,13 @@
   color: #ffffff;
   text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
 
-  &__v {
-    color: #f5c518;
-    font-size: 3.7rem;
-  }
+ 
 }
 
 .hall-page__info {
-  text-align: center;
+ 
   margin-bottom: 50px;
-  color: white;
+  color: #000000;
 }
 
 .hall-page__title {
@@ -62,16 +82,26 @@
   font-size: 1.25rem;
   opacity: 0.95;
 }
+.hall-scheme {
+      background: #171D24;
+    color: white;
+border-radius: 0px;
+    margin: 0 auto;
+    max-width: none;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+}
 
 .hall-scheme-wrapper {
-  margin-bottom: 60px;
+  margin-bottom: 30px;
+  
+}
+
+.hall-page__details{
+  font-weight: 300;
 }
 
 /* ==================== Стили для мест в зале ==================== */
 .seat {
-  width: 46px;
-  height: 46px;
-  border: none;
   border-radius: 8px;
   font-size: 0.95rem;
   font-weight: 600;
@@ -136,16 +166,20 @@
 }
 
 .btn-book {
-  background: #00bfff;
-  color: white;
-  font-size: 1.3rem;
-  font-weight: 700;
+  z-index: 5;
+  background: #00bfff !important;
+  color: white !important;
+  font-size: 1rem;
+  font-weight: 500;
+  width: 232px;
+  height: 40px;
   padding: 18px 90px;
-  border: none;
-  border-radius: 8px;
+  border: none !important;
+  border-radius: 3px !important;
   cursor: pointer;
   transition: all 0.3s;
   box-shadow: 0 6px 20px rgba(0, 191, 255, 0.3);
+  margin-bottom: 30px;
 
   &:hover:not(:disabled) {
     background: #00d0ff;

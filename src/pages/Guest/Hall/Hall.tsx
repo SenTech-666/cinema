@@ -110,15 +110,17 @@ const Hall = () => {
 
       <div className="hall-page">
         <div className="hall-page__background" />
-
+ {/* Заголовок */}
+          <div className="hall-page__header">
+           <h1 className="logo">
+              ИДЁМ<span>В</span>КИНО
+            </h1>
+            
+          </div>
         <div className="hall-page__content">
 
-          {/* Заголовок */}
-          <div className="hall-page__header">
-            <div className="logo-big">
-              ИДЁМ<span className="logo-big__v">В</span>КИНО
-            </div>
-          </div>
+         
+         
 
           {/* Информация о сеансе */}
           <div className="hall-page__info">
@@ -138,11 +140,6 @@ const Hall = () => {
 
           {/* Действия */}
           <div className="hall-page__actions">
-            <div className="selected-info">
-              Выбрано мест: <strong>{selectedSeats.length}</strong> • 
-              Сумма: <strong>{totalPrice} ₽</strong>
-            </div>
-
             <button
               className="btn btn-book"
               onClick={handleBook}

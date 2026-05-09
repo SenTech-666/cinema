@@ -220,6 +220,11 @@ const AdminHalls = () => {
 
   return (
     <div className="admin-halls">
+      <div className="admin-header">
+              ИДЁМ<span className="logo-big__v">В</span>КИНО
+              <p>Администраторррская</p>
+            </div>
+            
 
       {/* 1. Управление залами */}
       <div className="admin-section">

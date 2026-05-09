@@ -3,7 +3,7 @@ import { Seat } from '@/types';
 import './HallScheme.scss';
 
 interface HallSchemeProps {
-  config: string[][];           // конфигурация от сервера (содержит 'taken')
+  config: string[][];           
   onSeatsChange: (seats: Seat[]) => void;
 }
 
@@ -67,7 +67,9 @@ const HallScheme = ({ config, onSeatsChange }: HallSchemeProps) => {
 
           return (
             <div key={rowNum} className="hall-row">
-              <div className="row-number">{rowNum}</div>
+              {/* Убрали номер ряда */}
+              {/* <div className="row-number">{rowNum}</div> */}
+
               <div className="hall-row__seats">
                 {rowSeats.map((seat) => {
                   const isSelected = selectedSeats.some(s => s.id === seat.id);
@@ -82,7 +84,8 @@ const HallScheme = ({ config, onSeatsChange }: HallSchemeProps) => {
                       onClick={() => toggleSeat(seat)}
                       disabled={seat.status === 'occupied' || seat.status === 'blocked'}
                     >
-                      {seat.number}
+                      {/* Убрали номер места внутри кресла */}
+                      {/* {seat.number} */}
                     </button>
                   );
                 })}
@@ -92,7 +95,7 @@ const HallScheme = ({ config, onSeatsChange }: HallSchemeProps) => {
         })}
       </div>
 
-      {/* Легенда — приведена в соответствие с макетом */}
+      {/* Легенда */}
       <div className="hall-scheme__legend">
         <div className="legend-item">
           <span className="seat seat--standard seat--free"></span>

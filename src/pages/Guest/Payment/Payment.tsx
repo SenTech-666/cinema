@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { BookingData } from '@/types';
 import Header from '../../../components/Header/Header';
+import ticketBg from '../../../assets/img/ticket-bg.png';
 import './Payment.scss';
 
 const Payment = () => {
@@ -39,13 +40,12 @@ const Payment = () => {
     try {
       const formData = new FormData();
       formData.append('seanceId', sessionId.toString());
-      formData.append('ticketDate', new Date().toISOString().split('T')[0]); // сегодняшняя дата
+      formData.append('ticketDate', new Date().toISOString().split('T')[0]);
 
-      // Формируем массив tickets согласно документации
       const ticketsArray = selectedSeats.map(seat => ({
         row: seat.row,
         place: seat.number,
-        coast: seat.type === 'vip' ? 350 : 250, 
+        coast: seat.type === 'vip' ? 350 : 250,
       }));
 
       formData.append('tickets', JSON.stringify(ticketsArray));
@@ -58,13 +58,7 @@ const Payment = () => {
       const data = await response.json();
 
       if (data.success && data.result) {
-        
-        navigate('/ticket', {
-          state: {
-            ...bookingData,
-            tickets: data.result.tickets, 
-          }
-        });
+        navigate('/ticket', { state: { ...bookingData, tickets: data.result.tickets } });
       } else {
         setError(data.error || 'Не удалось создать билеты');
       }
@@ -88,25 +82,36 @@ const Payment = () => {
               ИДЁМ<span className="logo-big__v">В</span>КИНО
             </div>
 
+            
+            <div className="ticket-preview">
+              <img 
+                src={ticketBg} 
+                className="ticket-bg" 
+              />
+              <img 
+                src={ticketBg} 
+                className="ticket-bg-up" 
+              />
+              <img 
+                src={ticketBg} 
+                className="ticket-bg-down" 
+              />
+            </div>
+
             <div className="payment-card">
               <div className="payment-card__header">ВЫ ВЫБРАЛИ БИЛЕТЫ:</div>
-
+          
               <div className="payment-card__body">
                 <h2 className="payment-card__title">{movieTitle}</h2>
 
                 <div className="payment-info">
-                  <p>
-                    <strong>Места:</strong>{' '}
-                    {selectedSeats.map(s => `${s.row} ряд, место ${s.number}`).join(', ')}
-                  </p>
+                  <p><strong>Места:</strong> {selectedSeats.map(s => `${s.row} ряд, место ${s.number}`).join(', ')}</p>
                   <p><strong>В зале:</strong> {hall}</p>
                   <p><strong>Начало сеанса:</strong> {time}</p>
                   <p><strong>Дата:</strong> {date}</p>
                   <p><strong>Стоимость:</strong> {totalPrice} рублей</p>
                 </div>
-              </div>
-
-              {error && <div className="payment-error">{error}</div>}
+                {error && <div className="payment-error">{error}</div>}
 
               <button 
                 className="btn-get-code" 
@@ -115,12 +120,16 @@ const Payment = () => {
               >
                 {isLoading ? 'ОБРАБОТКА...' : 'ПОЛУЧИТЬ КОД БРОНИРОВАНИЯ'}
               </button>
-
               <div className="payment-note">
                 После оплаты билет будет доступен в этом окне, а также придёт вам на почту.<br />
                 Покажите QR-код нашему контролёру у входа в зал.<br />
                 Приятного просмотра!
               </div>
+              </div>
+
+              
+
+              
             </div>
           </div>
         </div>
